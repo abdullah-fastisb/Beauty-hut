@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Beauty Hut</title>
+    <title>Our Services | Beauty Hut</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .services-header {
+            /* High-quality placeholder image of hair styling tools */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2069&auto=format&fit=crop') center/cover;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .services-header h1 { font-size: 3.5rem; letter-spacing: 3px; text-transform: uppercase; }
+        
+        .category-title {
+            color: #800000; /* Matching the maroon from the contact page */
+            font-size: 2.5rem;
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--primary-pink);
+            display: inline-block;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .price-tag {
+            color: var(--gold);
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -18,43 +51,83 @@
         </ul>
     </nav>
 
-    <section class="section">
-        <h2>Our Salon Services</h2>
+    <header class="services-header hidden">
+        <h1>Our Signature Services</h1>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        
+        <h2 class="category-title hidden">Hair Styling & Treatment</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Haircut & Style</h3>
-                <p>Includes wash, precision cut, and blowout.</p>
-                <h4 style="color: var(--gold); margin-top: 10px;">$45.00</h4>
+            <div class="card hidden">
+                <h3>Signature Haircut & Style</h3>
+                <p>Includes a deep wash, precision cut by senior stylists, and a flawless blowout.</p>
+                <span class="price-tag">Starting from Rs 3,500</span>
             </div>
-            <div class="card">
-                <h3>Glow Facial</h3>
-                <p>Deep cleansing and hydration for radiant skin.</p>
-                <h4 style="color: var(--gold); margin-top: 10px;">$60.00</h4>
+            <div class="card hidden">
+                <h3>Keratin Treatment</h3>
+                <p>Premium smoothing treatment to eliminate frizz and add intense shine.</p>
+                <span class="price-tag">Starting from Rs 12,000</span>
             </div>
-            <div class="card">
-                <h3>Classic Manicure</h3>
-                <p>Nail shaping, cuticle care, and polish.</p>
-                <h4 style="color: var(--gold); margin-top: 10px;">$25.00</h4>
-            </div>
-            <div class="card">
-                <h3>Bridal Makeup</h3>
-                <p>Full face makeup application for your special day.</p>
-                <h4 style="color: var(--gold); margin-top: 10px;">$120.00</h4>
+            <div class="card hidden">
+                <h3>Balayage & Color</h3>
+                <p>Custom hand-painted highlights using imported, low-damage color lines.</p>
+                <span class="price-tag">Starting from Rs 15,000</span>
             </div>
         </div>
-        <div style="margin-top: 2rem;">
-            <a href="booking.html" class="btn">Book an Appointment</a>
+
+        <h2 class="category-title hidden">Advanced Skincare</h2>
+        <div class="grid">
+            <div class="card hidden">
+                <h3>Glow Hydrafacial</h3>
+                <p>Deep cleansing, extraction, and intense hydration for instantly radiant skin.</p>
+                <span class="price-tag">Rs 6,500</span>
+            </div>
+            <div class="card hidden">
+                <h3>Dermaplaning & Polish</h3>
+                <p>Removes dead skin and peach fuzz for the smoothest makeup application possible.</p>
+                <span class="price-tag">Rs 4,000</span>
+            </div>
+            <div class="card hidden">
+                <h3>Acne Clearing Facial</h3>
+                <p>Targeted treatment using high-frequency wands to kill bacteria and soothe inflammation.</p>
+                <span class="price-tag">Rs 5,500</span>
+            </div>
+        </div>
+
+        <h2 class="category-title hidden">Bridal & Party Makeup</h2>
+        <div class="grid">
+            <div class="card hidden">
+                <h3>Signature Bridal Makeup</h3>
+                <p>Flawless, long-lasting traditional or modern bridal look by our master artists. Includes dupatta setting.</p>
+                <span class="price-tag">Rs 35,000</span>
+            </div>
+            <div class="card hidden">
+                <h3>Walima / Reception Makeup</h3>
+                <p>Soft, glowing, and elegant makeup tailored perfectly to your dress and jewelry.</p>
+                <span class="price-tag">Rs 25,000</span>
+            </div>
+            <div class="card hidden">
+                <h3>Party Makeup</h3>
+                <p>Glamorous evening makeup with premium lashes and professional hair styling.</p>
+                <span class="price-tag">Rs 8,500</span>
+            </div>
+        </div>
+
+        <div class="hidden" style="margin-top: 4rem;">
+            <a href="booking.html" class="btn" style="padding: 15px 40px; font-size: 1.2rem;">Book Your Appointment Now</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Beauty Hut. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="https://instagram.com" target="_blank">Instagram</a>
+        <p>© 2024 Beauty Hut. All Rights Reserved since 2006.</p>
+        <div class="social-links" style="margin-top: 15px;">
+            <a href="https://www.instagram.com/beautyhutrwp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@beautyhutrwp?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
         </div>
     </footer>
 
-    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">💬 Chat on WhatsApp</a>
+    <a href="https://wa.me/923468560772" class="whatsapp-float" target="_blank">💬 Chat on WhatsApp</a>
     <script src="script.js"></script>
 </body>
 </html>

@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Beauty Hut</title>
+    <title>Contact & Locations | Beauty Hut</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=2036&auto=format&fit=crop') center/cover;
+            height: 45vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .contact-header h1 { font-size: 3.5rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px;}
+        .contact-header p { font-size: 1.2rem; color: var(--primary-pink); }
+    </style>
 </head>
 <body>
     <nav>
@@ -18,57 +32,164 @@
         </ul>
     </nav>
 
-    <section class="section">
-        <h2>Our Branches</h2>
-        <p style="margin-bottom: 30px;">Find a Beauty Hut location near you in Rawalpindi and Islamabad.</p>
+    <header class="contact-header hidden">
+        <h1>Our Salons</h1>
+        <p>7 Luxury Destinations in Rawalpindi & Islamabad</p>
+    </header>
+
+    <section class="locations-container">
         
-        <div class="grid">
-            <div class="card" style="text-align: left;">
-                <h3 style="margin-bottom: 10px;">Chaklala Scheme 3 (House)</h3>
-                <p><strong>Phone:</strong> <a href="tel:03468560772" style="color: var(--text-dark); text-decoration: none;">0346 8560772</a></p>
-                <a href="https://share.google/olKYr4ZhfvU86krgu" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;">📍 View on Map</a>
+        <div class="luxury-branch-card hidden">
+            <div class="branch-info">
+                <h2>Chaklala Scheme 3 (House)</h2>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📍</span>
+                    <span>Chaklala Scheme 3, Rawalpindi</span>
+                </div>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📞</span>
+                    <strong>0346 8560772</strong>
+                </div>
+                <div class="branch-actions">
+                    <a href="tel:03468560772" class="btn-solid">Call Branch</a>
+                    <a href="https://share.google/olKYr4ZhfvU86krgu" target="_blank" class="btn-outline">Get Directions</a>
+                </div>
             </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="margin-bottom: 10px;">Chaklala Scheme 3 (Plaza)</h3>
-                <p><strong>Phone:</strong> <a href="tel:03335347048" style="color: var(--text-dark); text-decoration: none;">0333 5347048</a></p>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="margin-bottom: 10px;">Satellite Town</h3>
-                <p><strong>Phone:</strong> <a href="tel:03468560775" style="color: var(--text-dark); text-decoration: none;">0346 8560775</a></p>
-                <a href="https://share.google/sJP5XR7pmsTzQMGT9" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;">📍 View on Map</a>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="margin-bottom: 10px;">PWD Branch</h3>
-                <p><strong>Phone:</strong> <a href="tel:03468560773" style="color: var(--text-dark); text-decoration: none;">0346 8560773</a></p>
-                <a href="https://share.google/uEi0VX9IQfNRE9V8t" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;">📍 View on Map</a>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="margin-bottom: 10px;">Lalazar</h3>
-                <p><strong>Phone:</strong> <a href="tel:03415057060" style="color: var(--text-dark); text-decoration: none;">0341 5057060</a></p>
-                <a href="https://share.google/tATWN2jx4b8FM5RLb" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;">📍 View on Map</a>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="margin-bottom: 10px;">Gulzar-e-Quaid</h3>
-                <p><strong>Phone:</strong> <a href="tel:03349558879" style="color: var(--text-dark); text-decoration: none;">0334 9558879</a></p>
-                <a href="https://share.google/ifgqaAblxUPHM9CIw" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;">📍 View on Map</a>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="margin-bottom: 10px;">Bahria Phase 7</h3>
-                <p><strong>Phone:</strong> <a href="tel:03468560771" style="color: var(--text-dark); text-decoration: none;">0346 8560771</a></p>
-                <a href="https://share.google/qPKeKLcdFSAIJPMRw" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;">📍 View on Map</a>
+            <div class="branch-map">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7553768037956!2d73.08692327452698!3d33.58570014222308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfecb26a8d54bb%3A0x987a0a1fd3397bf9!2sBeauty%20Hut%20Chaklala%20Scheme%203!5e0!3m2!1sen!2s!4v1774379309968!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
+
+        <div class="luxury-branch-card hidden">
+            <div class="branch-info">
+                <h2>Chaklala Scheme 3 (Plaza)</h2>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📍</span>
+                    <span>Commercial Plaza, Chaklala Scheme 3</span>
+                </div>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📞</span>
+                    <strong>0333 5347048</strong>
+                </div>
+                <div class="branch-actions">
+                    <a href="tel:03335347048" class="btn-solid">Call Branch</a>
+                </div>
+            </div>
+            <div class="branch-map">
+                <iframe src="https://maps.google.com/maps?q=Chaklala+Scheme+3+Commercial+Rawalpindi&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="luxury-branch-card hidden">
+            <div class="branch-info">
+                <h2>Satellite Town</h2>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📍</span>
+                    <span>Satellite Town, Rawalpindi</span>
+                </div>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📞</span>
+                    <strong>0346 8560775</strong>
+                </div>
+                <div class="branch-actions">
+                    <a href="tel:03468560775" class="btn-solid">Call Branch</a>
+                    <a href="https://share.google/sJP5XR7pmsTzQMGT9" target="_blank" class="btn-outline">Get Directions</a>
+                </div>
+            </div>
+            <div class="branch-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26573.903078240255!2d73.03761131083982!3d33.638037700000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df9520b8a6c35f%3A0xdd89f6ad64033524!2sBeauty%20Hut!5e0!3m2!1sen!2s!4v1774379506175!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="luxury-branch-card hidden">
+            <div class="branch-info">
+                <h2>PWD Branch</h2>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📍</span>
+                    <span>PWD Housing Society</span>
+                </div>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📞</span>
+                    <strong>0346 8560773</strong>
+                </div>
+                <div class="branch-actions">
+                    <a href="tel:03468560773" class="btn-solid">Call Branch</a>
+                    <a href="https://share.google/uEi0VX9IQfNRE9V8t" target="_blank" class="btn-outline">Get Directions</a>
+                </div>
+            </div>
+            <div class="branch-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.3383138440704!2d73.13965047452626!3d33.57056424301279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfedc8733ea95b%3A0xcef3444060e70e71!2sBeauty%20Hut%20Pwd!5e0!3m2!1sen!2s!4v1774379557982!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="luxury-branch-card hidden">
+            <div class="branch-info">
+                <h2>Lalazar</h2>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📍</span>
+                    <span>Lalazar, Rawalpindi</span>
+                </div>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📞</span>
+                    <strong>0341 5057060</strong>
+                </div>
+                <div class="branch-actions">
+                    <a href="tel:03415057060" class="btn-solid">Call Branch</a>
+                    <a href="https://share.google/tATWN2jx4b8FM5RLb" target="_blank" class="btn-outline">Get Directions</a>
+                </div>
+            </div>
+            <div class="branch-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.349107000627!2d73.05942057452631!3d33.57028394302725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df93d4ad9386f1%3A0xb89a3d2d14db19d6!2sBeauty%20Hut%20(Lalazar%20Branch)!5e0!3m2!1sen!2s!4v1774379597376!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="luxury-branch-card hidden">
+            <div class="branch-info">
+                <h2>Gulzar-e-Quaid</h2>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📍</span>
+                    <span>Gulzar-e-Quaid, Rawalpindi</span>
+                </div>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📞</span>
+                    <strong>0334 9558879</strong>
+                </div>
+                <div class="branch-actions">
+                    <a href="tel:03349558879" class="btn-solid">Call Branch</a>
+                    <a href="https://share.google/ifgqaAblxUPHM9CIw" target="_blank" class="btn-outline">Get Directions</a>
+                </div>
+            </div>
+            <div class="branch-map">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.350154825527!2d73.12854917452756!3d33.596218141674136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfedeaba4be5e1%3A0x9aa02b8cd153867d!2sBeauty%20hut%20Gulzar-e-Quaid%20branch!5e0!3m2!1sen!2s!4v1774379646071!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="luxury-branch-card hidden">
+            <div class="branch-info">
+                <h2>Bahria Phase 7</h2>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📍</span>
+                    <span>Bahria Town Phase 7</span>
+                </div>
+                <div class="branch-detail-row">
+                    <span class="branch-icon">📞</span>
+                    <strong>0346 8560771</strong>
+                </div>
+                <div class="branch-actions">
+                    <a href="tel:03468560771" class="btn-solid">Call Branch</a>
+                    <a href="https://share.google/qPKeKLcdFSAIJPMRw" target="_blank" class="btn-outline">Get Directions</a>
+                </div>
+            </div>
+            <div class="branch-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.224874051105!2d73.09823727452383!3d33.52153854556854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed2a56586657%3A0x5972d693ac5abd7a!2sBeauty%20Hut%20Phase%207%20Branch!5e0!3m2!1sen!2s!4v1774379691774!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
     </section>
 
     <footer>
-        <p>© 2024 Beauty Hut. All Rights Reserved.</p>
-        <div class="social-links">
+        <p>© 2024 Beauty Hut. All Rights Reserved since 2006.</p>
+        <div class="social-links" style="margin-top: 15px;">
             <a href="https://www.instagram.com/beautyhutrwp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
             <a href="https://www.tiktok.com/@beautyhutrwp?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
         </div>

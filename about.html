@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Beauty Hut</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styling to make the About page look rich and centered */
+        .about-header {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop') center/cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .about-header h1 { font-size: 3rem; letter-spacing: 2px; text-transform: uppercase; color: #fff;}
+        
+        .about-split {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-text h3 { color: var(--gold); font-size: 2rem; margin-bottom: 15px; }
+        .about-text p { font-size: 1.1rem; margin-bottom: 20px; color: #555; line-height: 1.8; }
+    </style>
 </head>
 <body>
     <nav>
@@ -18,19 +57,27 @@
         </ul>
     </nav>
 
+    <header class="about-header hidden">
+        <h1>Our Story</h1>
+    </header>
+
     <section class="section">
-        <h2>About Beauty Hut</h2>
-        <div class="form-container" style="text-align: center; max-width: 700px;">
-            <p style="margin-bottom: 20px;">Founded in <strong>2006</strong>, Beauty Hut has been a trusted name in beauty and self-care for over a decade. What started as a single salon has now proudly grown to <strong>7 branches across Rawalpindi and Islamabad</strong>.</p>
-            <p style="margin-bottom: 20px;">We are dedicated to bringing out the natural beauty in everyone. Our team of expert stylists and aestheticians are highly trained in the latest techniques, using only top-quality products.</p>
-            <h3 style="color: var(--dark-pink); margin-top: 30px;">Our Promise</h3>
-            <p>To provide a relaxing, luxurious experience where you leave feeling confident and refreshed, no matter which of our branches you visit.</p>
+        <div class="about-split">
+            <div class="about-img hidden">
+                <img src="assets/salon-about.jpeg" alt="Inside Beauty Hut Salon">
+            </div>
+            <div class="about-text hidden">
+                <h3>A Legacy of Elegance Since 2006</h3>
+                <p>What started as a single intimate salon has proudly evolved into a trusted name in beauty and self-care. For over a decade, Beauty Hut has been dedicated to bringing out the natural, authentic beauty in every client who walks through our doors.</p>
+                <p>Today, we proudly operate <strong>7 luxury branches across Rawalpindi and Islamabad</strong>. Our team of expert stylists, makeup artists, and aestheticians are highly trained in the latest global techniques, using only premium, top-tier products.</p>
+                <p><strong>Our Promise:</strong> To provide a relaxing, high-end experience where you leave feeling confident, empowered, and refreshed.</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 Beauty Hut. All Rights Reserved.</p>
-        <div class="social-links">
+        <p>© 2024 Beauty Hut. All Rights Reserved since 2006.</p>
+        <div class="social-links" style="margin-top: 15px;">
             <a href="https://www.instagram.com/beautyhutrwp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
             <a href="https://www.tiktok.com/@beautyhutrwp?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
         </div>

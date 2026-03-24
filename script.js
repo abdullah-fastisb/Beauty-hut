@@ -1,7 +1,6 @@
 // script.js
 
 // --- PREMIUM SCROLL ANIMATIONS ---
-// This watches the screen and fades elements in when you scroll to them
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -15,28 +14,37 @@ document.addEventListener("DOMContentLoaded", function() {
     hiddenElements.forEach((el) => observer.observe(el));
 });
 
-// --- BOOKING SYSTEM ---
+// --- DYNAMIC WHATSAPP BOOKING SYSTEM ---
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const newBooking = {
-            id: Date.now(),
-            name: document.getElementById('name').value,
-            phone: document.getElementById('phone').value,
-            service: document.getElementById('service').value,
-            date: document.getElementById('date').value,
-            time: document.getElementById('time').value
-        };
-        let bookings = JSON.parse(localStorage.getItem('beautyHutBookings')) || [];
-        bookings.push(newBooking);
-        localStorage.setItem('beautyHutBookings', JSON.stringify(bookings));
-        alert('Thank you! Your appointment request has been saved locally.');
+        e.preventDefault(); 
+        
+        // Gather the customer's info
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        
+        // Grab the BRANCH selection (This actually grabs the phone number we hid in the value!)
+        const branchSelect = document.getElementById('branch');
+        const selectedBranchNumber = branchSelect.value;
+        const selectedBranchName = branchSelect.options[branchSelect.selectedIndex].text;
+
+        const service = document.getElementById('service').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+
+        // Format the message nicely for WhatsApp
+        const message = `*New Appointment Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Branch Selected:* ${selectedBranchName}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Time:* ${time}%0A%0AHello Beauty Hut! I would like to confirm this booking.`;
+
+        // Open WhatsApp targeting the specific branch the customer chose!
+        window.open(`https://wa.me/${selectedBranchNumber}?text=${message}`, '_blank');
+        
+        // Clear the form after sending
         bookingForm.reset();
     });
 }
 
-// --- CART SYSTEM ---
+// --- CART SYSTEM (Remains fully functional for products) ---
 let cart = JSON.parse(localStorage.getItem('beautyHutCart')) || [];
 
 function addToCart(productName, price) {
@@ -55,15 +63,15 @@ function updateCartDisplay() {
         let total = 0;
         
         if (cart.length === 0) {
-            cartDisplay.innerHTML = '<p>Your cart is empty.</p>';
+            cartDisplay.innerHTML = '<p style="color: #777;">Your cart is empty.</p>';
         } else {
             cart.forEach((item, index) => {
                 total += item.price;
                 cartDisplay.innerHTML += `
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
                         <span>${item.name}</span>
                         <span>Rs ${item.price} 
-                            <button onclick="removeFromCart(${index})" style="color:red; background:none; border:none; cursor:pointer; margin-left:10px; font-weight:bold;">X</button>
+                            <button onclick="removeFromCart(${index})" style="color:red; background:none; border:none; cursor:pointer; margin-left:15px; font-weight:bold; font-size: 1.1rem;">X</button>
                         </span>
                     </div>
                 `;

@@ -2,8 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment | Beauty Hut</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .booking-header {
+            /* High-quality placeholder image of a relaxing spa/salon setup */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2070&auto=format&fit=crop') center/cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .booking-header h1 { font-size: 3.5rem; letter-spacing: 3px; text-transform: uppercase; }
+        
+        /* Making the form look a bit more luxurious */
+        .premium-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--primary-pink);
+            margin-top: -5rem; /* Pulls the form up over the section slightly */
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -17,38 +43,77 @@
         </ul>
     </nav>
 
-    <section class="section">
-        <h2>Book Your Visit</h2>
-        <div class="form-container">
-            <form id="bookingForm">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label>Service</label>
-                    <select id="service" required>
-                        <option value="Haircut">Haircut & Style</option>
-                        <option value="Facial">Glow Facial</option>
-                        <option value="Manicure">Manicure</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Date</label>
-                    <input type="date" id="date" required>
-                </div>
-                <div class="form-group">
-                    <label>Time</label>
-                    <input type="time" id="time" required>
-                </div>
-                <button type="submit" class="btn" style="width: 100%;">Confirm Booking</button>
-            </form>
+    <header class="booking-header hidden">
+        <h1>Reserve Your Time</h1>
+    </header>
+
+    <section class="section" style="background-color: #fafafa; padding-top: 0;">
+        <div class="form-container hidden">
+            <div class="premium-form">
+                <h2 style="color: #800000; font-size: 2rem; margin-bottom: 2rem; text-align: center;">Booking Details</h2>
+                
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" placeholder="03XX XXXXXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Branch</label>
+                        <select id="branch" required style="font-weight: bold; color: #800000;">
+                            <option value="" disabled selected>Choose your nearest salon...</option>
+                            <option value="923468560772">Chaklala Scheme 3 (House)</option>
+                            <option value="923335347048">Chaklala Scheme 3 (Plaza)</option>
+                            <option value="923468560775">Satellite Town</option>
+                            <option value="923468560773">PWD Branch</option>
+                            <option value="923415057060">Lalazar</option>
+                            <option value="923349558879">Gulzar-e-Quaid</option>
+                            <option value="923468560771">Bahria Phase 7</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Service</label>
+                        <select id="service" required>
+                            <option value="" disabled selected>What do you need today?</option>
+                            <option value="Haircut & Styling">Haircut & Styling</option>
+                            <option value="Party Makeup">Party Makeup</option>
+                            <option value="Bridal Makeup">Bridal Makeup</option>
+                            <option value="Facial & Skincare">Facial & Skincare</option>
+                            <option value="Nail Art / Manicure">Nail Art & Manicure</option>
+                            <option value="Other">Other (Will discuss on WhatsApp)</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Time</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; background-color: #800000; font-size: 1.2rem; padding: 15px; margin-top: 1rem;">Confirm via WhatsApp</button>
+                </form>
+            </div>
         </div>
     </section>
+
+    <footer>
+        <p>© 2024 Beauty Hut. All Rights Reserved since 2006.</p>
+        <div class="social-links" style="margin-top: 15px;">
+            <a href="https://www.instagram.com/beautyhutrwp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@beautyhutrwp?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
