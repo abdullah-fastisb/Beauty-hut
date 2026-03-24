@@ -1,12 +1,25 @@
 // script.js
 
+// --- PREMIUM SCROLL ANIMATIONS ---
+// This watches the screen and fades elements in when you scroll to them
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+});
+
 // --- BOOKING SYSTEM ---
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Gather data
         const newBooking = {
             id: Date.now(),
             name: document.getElementById('name').value,
@@ -15,14 +28,9 @@ if (bookingForm) {
             date: document.getElementById('date').value,
             time: document.getElementById('time').value
         };
-
-        // Get existing bookings from local storage or create empty array
         let bookings = JSON.parse(localStorage.getItem('beautyHutBookings')) || [];
         bookings.push(newBooking);
-        
-        // Save back to local storage
         localStorage.setItem('beautyHutBookings', JSON.stringify(bookings));
-        
         alert('Thank you! Your appointment request has been saved locally.');
         bookingForm.reset();
     });
@@ -54,8 +62,8 @@ function updateCartDisplay() {
                 cartDisplay.innerHTML += `
                     <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
                         <span>${item.name}</span>
-                        <span>$${item.price} 
-                            <button onclick="removeFromCart(${index})" style="color:red; background:none; border:none; cursor:pointer; margin-left:10px;">X</button>
+                        <span>Rs ${item.price} 
+                            <button onclick="removeFromCart(${index})" style="color:red; background:none; border:none; cursor:pointer; margin-left:10px; font-weight:bold;">X</button>
                         </span>
                     </div>
                 `;
@@ -65,13 +73,6 @@ function updateCartDisplay() {
     }
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('beautyHutCart', JSON.stringify(cart));
-    updateCartDisplay();
-}
-
-// Run on page load
 document.addEventListener('DOMContentLoaded', () => {
     updateCartDisplay();
 });

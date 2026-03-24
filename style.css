@@ -18,6 +18,7 @@ body {
     background-color: var(--white);
     color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevents side-scrolling during animations */
 }
 
 /* Navigation */
@@ -26,11 +27,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: var(--primary-pink);
+    background-color: var(--white); /* Cleaner look for premium feel */
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo {
@@ -38,7 +39,8 @@ nav {
     font-weight: bold;
     color: var(--gold);
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -55,120 +57,151 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+    color: var(--dark-pink);
 }
 
-/* Hero Section */
+/* PREMIUM HERO SECTION WITH VIDEO */
 .hero {
-    height: 80vh;
+    position: relative;
+    height: 90vh; /* Fills almost the whole screen */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(255,228,225,0.7), rgba(255,228,225,0.7)), url('assets/hero-bg.jpg') center/cover;
-    padding: 0 20px;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure the video fills the screen */
+    z-index: -2;
+}
+
+/* Soft pink tint over the video so text is readable */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 228, 225, 0.4); 
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white box */
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
     color: var(--gold);
     margin-bottom: 1rem;
+    letter-spacing: 1px;
 }
 
 .btn {
-    padding: 10px 25px;
-    background-color: var(--gold);
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--dark-pink);
     color: var(--white);
     text-decoration: none;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.5);
 }
 
 .btn:hover {
-    background-color: #b5952f;
+    background-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* Sections Global */
 .section {
-    padding: 4rem 5%;
+    padding: 5rem 5%;
     text-align: center;
 }
 
 .section h2 {
     color: var(--gold);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Grid Layouts for Products/Services */
+/* Grid Layouts */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
 }
 
 .card {
     background: var(--white);
     border: 1px solid var(--primary-pink);
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    border-radius: 15px;
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 182, 193, 0.2);
 }
 
 .card h3 {
-    color: var(--dark-pink);
-    margin-bottom: 10px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
-/* Forms */
-.form-container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
+/* --- PREMIUM SCROLL ANIMATIONS --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
 }
 
-.form-group {
-    margin-bottom: 1.2rem;
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--dark-pink);
-    border-radius: 5px;
-}
-
-/* Footer */
+/* Footer & WhatsApp */
 footer {
-    background-color: var(--text-dark);
-    color: var(--white);
+    background-color: var(--primary-pink);
+    color: var(--text-dark);
     text-align: center;
-    padding: 2rem 5%;
+    padding: 3rem 5%;
     margin-top: 2rem;
 }
 
 .social-links a {
-    color: var(--gold);
-    margin: 0 10px;
+    color: var(--text-dark);
+    margin: 0 15px;
     text-decoration: none;
+    font-weight: bold;
 }
 
-/* Floating WhatsApp */
+.social-links a:hover {
+    color: var(--gold);
+}
+
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -176,18 +209,21 @@ footer {
     background-color: #25d366;
     color: white;
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.05);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* In a real app, add a hamburger menu toggle here */
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content { margin: 0 20px; padding: 2rem; }
 }
