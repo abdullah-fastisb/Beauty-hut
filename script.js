@@ -1,5 +1,15 @@
 // script.js
 
+// --- MOBILE HAMBURGER MENU ---
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+
 // --- PREMIUM SCROLL ANIMATIONS ---
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries) => {
@@ -20,31 +30,23 @@ if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault(); 
         
-        // Gather the customer's info
         const name = document.getElementById('name').value;
         const phone = document.getElementById('phone').value;
-        
-        // Grab the BRANCH selection (This actually grabs the phone number we hid in the value!)
         const branchSelect = document.getElementById('branch');
         const selectedBranchNumber = branchSelect.value;
         const selectedBranchName = branchSelect.options[branchSelect.selectedIndex].text;
-
         const service = document.getElementById('service').value;
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
 
-        // Format the message nicely for WhatsApp
         const message = `*New Appointment Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Branch Selected:* ${selectedBranchName}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Time:* ${time}%0A%0AHello Beauty Hut! I would like to confirm this booking.`;
 
-        // Open WhatsApp targeting the specific branch the customer chose!
         window.open(`https://wa.me/${selectedBranchNumber}?text=${message}`, '_blank');
-        
-        // Clear the form after sending
         bookingForm.reset();
     });
 }
 
-// --- CART SYSTEM (Remains fully functional for products) ---
+// --- CART SYSTEM ---
 let cart = JSON.parse(localStorage.getItem('beautyHutCart')) || [];
 
 function addToCart(productName, price) {
