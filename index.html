@@ -4,11 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beauty Hut | Premium Salon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Featured Services Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: block;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 15, 26, 0.15);
+        }
+        .feature-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .feature-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .feature-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: #800000;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .review-box {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-top: 4px solid var(--gold);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            text-align: left;
+            position: relative;
+        }
+        .review-box::before {
+            content: "“";
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: rgba(212, 175, 55, 0.2);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+        .stars { color: var(--gold); margin-bottom: 15px; font-size: 1.2rem; }
+        .review-text { font-style: italic; color: #555; margin-bottom: 20px; }
+        .reviewer-name { font-weight: bold; color: #800000; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;}
+    </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">Beauty Hut</a>
+        <a href="index.html">
+            <img src="assets/logo.jpg" alt="Beauty Hut Logo" class="logo-img">
+        </a>
         
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -32,27 +110,132 @@
         <div class="video-overlay"></div>
         
         <div class="hero-content hidden">
-            <h1>Enhance Your<br>Natural Beauty</h1>
-            <p style="font-size: 1.1rem; color: #555; margin-bottom: 25px;">Luxury salon treatments tailored just for you across 7 branches.</p>
+            <h1>Crafting Your<br>Perfect Look</h1>
+            <p style="font-size: 1.1rem; color: #555; margin-bottom: 25px;">Luxury salon treatments tailored just for you across 7 branches in Rawalpindi.</p>
             <a href="booking.html" class="btn" style="padding: 15px 40px; font-size: 1.2rem;">Book Appointment</a>
         </div>
     </header>
 
-    <section class="section">
-        <h2 class="hidden">Welcome to Beauty Hut</h2>
-        <p class="hidden" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
-            Experience the ultimate in beauty and relaxation. With over a decade of excellence, our expert stylists and therapists are dedicated to providing you with premium, personalized care.
-        </p>
-        <div class="hidden" style="margin-top: 30px;">
-            <a href="services.html" class="btn btn-outline" style="color: var(--dark-pink); border-color: var(--dark-pink); background: transparent; border-width: 2px; border-style: solid;">Explore Services</a>
+    <section class="section" style="padding-top: 6rem;">
+        <div class="editorial-section hidden">
+            <div class="editorial-media">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Luxury Salon Interior">
+            </div>
+            <div class="editorial-content">
+                <h3>A Legacy of Elegance</h3>
+                <p>Setting the standard in Rawalpindi since 2006.</p>
+                <p style="text-transform: none; letter-spacing: normal; font-size: 1.05rem; line-height: 1.8;">
+                    With over a decade of excellence, Beauty Hut has become the ultimate destination for premium beauty care. Our master stylists and certified therapists use only world-class brands like Huda Beauty, MAC, and Urban Decay to ensure your flawless look. 
+                    <br><br>
+                    Whether you are visiting for a signature bridal makeover or a relaxing spa day, our 7 branches offer a sanctuary of luxury tailored completely to you.
+                </p>
+                <a href="about.html" class="btn" style="margin-top: 10px;">Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <h2 class="hidden" style="font-family: 'Playfair Display', serif; color: #800000; font-size: 2.8rem; margin-bottom: 3rem;">Our Specialties</h2>
+        
+        <div class="feature-grid hidden">
+            <a href="services.html" class="feature-card">
+                <img src="assets/formal.jpeg" alt="Bridal">
+                <div class="feature-content">
+                    <h3>Bridal Artistry</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Signature makeovers by master artists.</p>
+                </div>
+            </a>
+            
+            <a href="services.html" class="feature-card">
+                <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=800&q=80" alt="Hair Treatments">
+                <div class="feature-content">
+                    <h3>Hair Studio</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Balayage, rebonding, and styling.</p>
+                </div>
+            </a>
+
+            <a href="services.html" class="feature-card">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Spa">
+                <div class="feature-content">
+                    <h3>Spa & Skincare</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Advanced facials and relaxing massages.</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="hidden" style="margin-top: 3rem;">
+            <a href="services.html" class="btn" style="background: transparent; color: #800000; border: 2px solid #800000; box-shadow: none;">View All Services</a>
+        </div>
+    </section>
+
+    <section class="section" style="padding-bottom: 8rem;">
+        <h2 class="hidden" style="font-family: 'Playfair Display', serif; color: #800000; font-size: 2.8rem; margin-bottom: 3rem;">Client Love</h2>
+        
+        <div class="carousel-wrapper hidden">
+            <div class="carousel-track">
+                <div class="review-box">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I booked Beauty Hut for my Barat and they completely exceeded my expectations. The signature look by Iffat Jabeen was flawless and lasted all night."</p>
+                    <p class="reviewer-name">- Fatima S.</p>
+                </div>
+                <div class="review-box">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The best hair rebonding experience I've ever had. The staff is so professional and they only use top-tier imported products. My hair feels like silk."</p>
+                    <p class="reviewer-name">- Ayesha K.</p>
+                </div>
+                <div class="review-box">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I visit their branch every month for my Hydra Facial and Spa Manicure. The environment is so relaxing, and the hygiene standards are incredible. Absolute luxury."</p>
+                    <p class="reviewer-name">- Zainab R.</p>
+                </div>
+                
+                <div class="review-box">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I booked Beauty Hut for my Barat and they completely exceeded my expectations. The signature look by Iffat Jabeen was flawless and lasted all night."</p>
+                    <p class="reviewer-name">- Fatima S.</p>
+                </div>
+                <div class="review-box">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The best hair rebonding experience I've ever had. The staff is so professional and they only use top-tier imported products. My hair feels like silk."</p>
+                    <p class="reviewer-name">- Ayesha K.</p>
+                </div>
+                <div class="review-box">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I visit their branch every month for my Hydra Facial and Spa Manicure. The environment is so relaxing, and the hygiene standards are incredible. Absolute luxury."</p>
+                    <p class="reviewer-name">- Zainab R.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 Beauty Hut. All Rights Reserved since 2006.</p>
-        <div class="social-links" style="margin-top: 15px;">
-            <a href="https://www.instagram.com/beautyhutrwp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@beautyhutrwp?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Beauty Hut</h4>
+                <p>Enhancing your natural beauty since 2006. Experience ultimate luxury and personalized care across our branches.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="services.html">Our Services</a>
+                <a href="products.html">Shop Products</a>
+                <a href="booking.html">Book Appointment</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <p>📍 Rawalpindi, Pakistan</p>
+                <p>📞 0346 8560772</p>
+                <p>✉️ info@beautyhut.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/beautyhutrwp" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@beautyhutrwp" target="_blank">TikTok</a>
+                <a href="https://wa.me/923468560772" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Beauty Hut. All Rights Reserved.</p>
         </div>
     </footer>
 

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Beauty Hut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         .services-header {
-            /* High-quality placeholder image of hair styling tools */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2069&auto=format&fit=crop') center/cover;
-            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=2000&q=80') center/cover;
+            height: 45vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,31 +17,42 @@
             color: white;
             text-align: center;
         }
-        .services-header h1 { font-size: 3.5rem; letter-spacing: 3px; text-transform: uppercase; }
         
+        .services-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
         .category-title {
-            color: #800000; /* Matching the maroon from the contact page */
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            color: #800000; 
+            font-size: 3rem;
             margin-top: 5rem;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--primary-pink);
-            display: inline-block;
-            padding-bottom: 10px;
+            margin-bottom: 3rem;
+            text-align: center;
             letter-spacing: 1px;
         }
 
-        .price-tag {
-            color: var(--gold);
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-top: 15px;
-            display: block;
+        .brand-note {
+            background-color: var(--primary-pink);
+            padding: 15px 30px;
+            border-left: 4px solid #800000;
+            margin: 0 auto 4rem auto;
+            max-width: 800px;
+            font-size: 1.1rem;
+            color: #800000;
+            text-align: center;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">Beauty Hut</a>
+        <a href="index.html">
+            <img src="assets/logo.jpg" alt="Beauty Hut Logo" class="logo-img">
+        </a>
         
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -59,78 +70,151 @@
     </nav>
 
     <header class="services-header hidden">
-        <h1>Our Signature Services</h1>
+        <h1>Signature Services</h1>
+        <p style="font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase;">Discover Your Ultimate Glow</p>
     </header>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section" style="padding-top: 2rem;">
         
-        <h2 class="category-title hidden">Hair Styling & Treatment</h2>
-        <div class="grid">
-            <div class="card hidden">
-                <h3>Signature Haircut & Style</h3>
-                <p>Includes a deep wash, precision cut by senior stylists, and a flawless blowout.</p>
-                <span class="price-tag">Starting from Rs 3,500</span>
+        <h2 class="category-title hidden">Bridal & Formal Artistry</h2>
+        <p class="hidden brand-note">For our signature looks, we use top-notch brands such as Huda Beauty, Fenty by Rihanna, TooFaced, Urban Decay & MAC.</p>
+        
+        <div class="editorial-section hidden">
+            <div class="editorial-media">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/bridal-clip.mp4" type="video/mp4">
+                </video>
             </div>
-            <div class="card hidden">
-                <h3>Keratin Treatment</h3>
-                <p>Premium smoothing treatment to eliminate frizz and add intense shine.</p>
-                <span class="price-tag">Starting from Rs 12,000</span>
+            <div class="editorial-content">
+                <h3>Signature Bridal Makeover</h3>
+                <p>Premium artistry by our master stylists</p>
+                <ul class="price-list">
+                    <li><span>Bridal Makeover (Iffat Jabeen)</span> <strong>Rs 60,000</strong></li>
+                    <li><span>Makeover w/ Services (Iffat Jabeen)</span> <strong>Rs 80,000</strong></li>
+                    <li><span>Bridal Barat</span> <strong>Rs 40,000</strong></li>
+                    <li><span>Bridal Barat Glam</span> <strong>Rs 45,000</strong></li>
+                </ul>
             </div>
-            <div class="card hidden">
-                <h3>Balayage & Color</h3>
-                <p>Custom hand-painted highlights using imported, low-damage color lines.</p>
-                <span class="price-tag">Starting from Rs 15,000</span>
+        </div>
+        
+        <div class="editorial-section hidden">
+            <div class="editorial-media">
+                <img src="assets/formal.jpeg" alt="Formal Makeup">
+            </div>
+            <div class="editorial-content">
+                <h3>Formal & Semi-Formal</h3>
+                <p>Flawless looks for special events</p>
+                <ul class="price-list">
+                    <li><span>Signature Look</span> <strong>Rs 15,000</strong></li>
+                    <li><span>Walima Soft Look / Glam</span> <strong>Rs 35k - 37k</strong></li>
+                    <li><span>Engagement / Nikkah</span> <strong>Rs 25k - 28k</strong></li>
+                    <li><span>Mehndi Makeup</span> <strong>Rs 20,000</strong></li>
+                    <li><span>Shimmery / Smokey Look</span> <strong>Rs 6k - 8k</strong></li>
+                </ul>
             </div>
         </div>
 
-        <h2 class="category-title hidden">Advanced Skincare</h2>
-        <div class="grid">
-            <div class="card hidden">
-                <h3>Glow Hydrafacial</h3>
-                <p>Deep cleansing, extraction, and intense hydration for instantly radiant skin.</p>
-                <span class="price-tag">Rs 6,500</span>
+        <h2 class="category-title hidden" style="margin-top: 5rem;">Hair Studio & Color</h2>
+        
+        <div class="editorial-section hidden">
+            <div class="editorial-media">
+                <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=800&q=80" alt="Hair Color and Balayage">
             </div>
-            <div class="card hidden">
-                <h3>Dermaplaning & Polish</h3>
-                <p>Removes dead skin and peach fuzz for the smoothest makeup application possible.</p>
-                <span class="price-tag">Rs 4,000</span>
-            </div>
-            <div class="card hidden">
-                <h3>Acne Clearing Facial</h3>
-                <p>Targeted treatment using high-frequency wands to kill bacteria and soothe inflammation.</p>
-                <span class="price-tag">Rs 5,500</span>
-            </div>
-        </div>
-
-        <h2 class="category-title hidden">Bridal & Party Makeup</h2>
-        <div class="grid">
-            <div class="card hidden">
-                <h3>Signature Bridal Makeup</h3>
-                <p>Flawless, long-lasting traditional or modern bridal look by our master artists. Includes dupatta setting.</p>
-                <span class="price-tag">Rs 35,000</span>
-            </div>
-            <div class="card hidden">
-                <h3>Walima / Reception Makeup</h3>
-                <p>Soft, glowing, and elegant makeup tailored perfectly to your dress and jewelry.</p>
-                <span class="price-tag">Rs 25,000</span>
-            </div>
-            <div class="card hidden">
-                <h3>Party Makeup</h3>
-                <p>Glamorous evening makeup with premium lashes and professional hair styling.</p>
-                <span class="price-tag">Rs 8,500</span>
+            <div class="editorial-content">
+                <h3>Color & Smoothing</h3>
+                <p>Vibrant transformations & silky textures</p>
+                <ul class="price-list">
+                    <li><span>Rebonding (Short to Long)</span> <strong>Rs 20k - 32k</strong></li>
+                    <li><span>Balayage / Foliage</span> <strong>Rs 13k - 25k</strong></li>
+                    <li><span>Keratin / Extenso</span> <strong>Rs 15k - 28k</strong></li>
+                    <li><span>Highlights / Baby Lights</span> <strong>Rs 8k - 20k</strong></li>
+                </ul>
             </div>
         </div>
 
-        <div class="hidden" style="margin-top: 4rem;">
-            <a href="booking.html" class="btn" style="padding: 15px 40px; font-size: 1.2rem;">Book Your Appointment Now</a>
+        <div class="editorial-section hidden">
+            <div class="editorial-media">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Hair Cutting">
+            </div>
+            <div class="editorial-content">
+                <h3>Cuts & Styling</h3>
+                <p>Precision techniques & elegant updos</p>
+                <ul class="price-list">
+                    <li><span>Signature Cut</span> <strong>Rs 8,000</strong></li>
+                    <li><span>Advance / Tail Bob / Moderate</span> <strong>Rs 3k - 4k</strong></li>
+                    <li><span>Bridal Hairstyle</span> <strong>Rs 6k - 8k</strong></li>
+                    <li><span>Blowdry & Styling</span> <strong>Rs 1.5k - 2k</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="category-title hidden" style="margin-top: 5rem;">Skincare & Spa Oasis</h2>
+
+        <div class="editorial-section hidden">
+            <div class="editorial-media">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Facial Treatment">
+            </div>
+            <div class="editorial-content">
+                <h3>Advanced Facials</h3>
+                <p>Deep cleansing & skin lifting</p>
+                <ul class="price-list">
+                    <li><span>Bridal Facial</span> <strong>Rs 10k - 15k</strong></li>
+                    <li><span>Hydra Facial</span> <strong>Rs 5k - 8k</strong></li>
+                    <li><span>Ph Balancing / Jansen / Lifting</span> <strong>Rs 4.5k - 7k</strong></li>
+                    <li><span>Skin Polish & Cleansing</span> <strong>Rs 650 - 5k</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="editorial-section hidden">
+            <div class="editorial-media">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Spa and Massage">
+            </div>
+            <div class="editorial-content">
+                <h3>Waxing, Massage & Nails</h3>
+                <p>Complete body care & relaxation</p>
+                <ul class="price-list">
+                    <li><span>Body Scrubbing & Massage</span> <strong>Rs 9,000</strong></li>
+                    <li><span>Acrylic Nails / Nail Art</span> <strong>Rs 2k - 6.5k</strong></li>
+                    <li><span>Full Body Wax</span> <strong>Rs 5k - 8k</strong></li>
+                    <li><span>Mani & Pedi (Spa / Parafinn)</span> <strong>Rs 1.5k - 2.5k</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hidden" style="margin-top: 5rem; text-align: center;">
+            <a href="booking.html" class="btn" style="padding: 15px 50px; font-size: 1.3rem; border-radius: 5px;">Reserve Your Session</a>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 Beauty Hut. All Rights Reserved since 2006.</p>
-        <div class="social-links" style="margin-top: 15px;">
-            <a href="https://www.instagram.com/beautyhutrwp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@beautyhutrwp?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Beauty Hut</h4>
+                <p>Enhancing your natural beauty since 2006. Experience ultimate luxury and personalized care across our branches.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="services.html">Our Services</a>
+                <a href="products.html">Shop Products</a>
+                <a href="booking.html">Book Appointment</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <p>📍 Rawalpindi, Pakistan</p>
+                <p>📞 0346 8560772</p>
+                <p>✉️ info@beautyhut.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/beautyhutrwp" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@beautyhutrwp" target="_blank">TikTok</a>
+                <a href="https://wa.me/923468560772" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Beauty Hut. All Rights Reserved.</p>
         </div>
     </footer>
 
